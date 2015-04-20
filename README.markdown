@@ -26,6 +26,7 @@ package main
 
 import (
   "fmt"
+  "log"
   "github.com/weppos/go-dnsimple/dnsimple"
 )
 
@@ -51,7 +52,7 @@ func main() {
   }
 
   // Create a new Domain
-  newDomain := Domain{Name: "example.com"}
+  newDomain := dnsimple.Domain{Name: "example.com"}
   domain, _, _ := client.Domains.Create(newDomain)
   fmt.Printf("Domain: %s\n (id: %d)", domain.Name, domain.Id)
 }
